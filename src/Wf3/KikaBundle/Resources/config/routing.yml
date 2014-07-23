@@ -1,3 +1,19 @@
 wf3_wiki_home:
     path:     /
     defaults: { _controller: Wf3KikaBundle:Default:home }
+
+wf3_wiki_legal:
+    path:     /mentions-legales/
+    defaults: { _controller: Wf3KikaBundle:Default:legal }
+
+wf3_wiki_about:
+    path:     /a-propos/
+    defaults: { _controller: Wf3KikaBundle:Default:about }
+#user
+wf3_wiki_register:
+    path:     /inscription/
+    defaults: { _controller: Wf3KikaBundle:User:register }
+
+#login:
+#    path:     /login
+#    defaults: { _controller: Wf3KikaBundle:User:login }

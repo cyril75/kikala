@@ -12,4 +12,18 @@ class DefaultController extends Controller
 
         return $this->render('Wf3KikaBundle:Default:home.html.twig');
     }
+
+    //page mentions légales
+	public function legalAction()
+	{
+
+        return $this->render('Wf3KikaBundle:Default:legal.html.twig');
+    }
+
+    //page à propos
+	public function aboutAction()
+	{
+
+        return $this->render('Wf3KikaBundle:Default:about.html.twig');
+    }
 }

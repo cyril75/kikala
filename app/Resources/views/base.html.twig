@@ -9,9 +9,38 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}
+        <div id="header">
+            <nav>
+
+               
+            </nav>
+            
+            {% block header %}
+
+            {% endblock %}
+        </div>
+
+
+            
+        {% block contenu %}
 
         {% endblock %}
+
+    
+
+        <div id="footer">
+            <nav>
+                <a href="{{ path('wf3_wiki_home') }}">Accueil</a>
+                <a href="{{ path('wf3_wiki_legal') }}">Mentions légales</a>
+                <a href="{{ path('wf3_wiki_about') }}">A propos</a>
+                <a href="{{ path('wf3_wiki_register') }}">Inscription</a>
+            </nav>
+            
+            {% block footer %}
+
+            {% endblock %}
+        </div>
+
 
 
         {% block javascripts %}
