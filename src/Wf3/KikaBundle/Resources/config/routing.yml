@@ -1,0 +1,3 @@
+wf3_wiki_home:
+    path:     /
+    defaults: { _controller: Wf3KikaBundle:Default:home }
