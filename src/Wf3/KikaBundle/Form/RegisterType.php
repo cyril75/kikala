@@ -15,28 +15,58 @@ class RegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, array(
+            ->add('gender', 'choice', array(
                 'label' => false,
-                'attr' => array('placeholder' => 'Votre nom')
+                'choices' => array(
+                'm' => 'Homme',
+                'f' => 'Femme'
+                ),
+                'expanded' => true, 
+                'multiple' => false
                 ))
-            ->add('firstName')
-            ->add('pseudo')
-            ->add('img')
-            ->add('yearOfBirth')
-            ->add('email')
+            ->add('name', null, array(
+                'label' => 'Votre nom : '
+                ))
+            ->add('firstName', null, array(
+                'label' => 'Votre prénom : '
+                ))
+            ->add('pseudo', null, array(
+                'label' => 'Votre pseudo : '
+                ))
+            ->add('img', 'file', array(
+                'label' => 'Image : ',
+                'attr' => array('required' => false),
+                'empty_data'  => 'plop.png'
+                ))
+            ->add('yearOfBirth', null, array(
+                'years' => range(1920, date('Y')),
+                'label' => 'Votre date de naissance : '
+                ))
+            /*->add('yearOfBirth', 'datetime', array(
+                'label' => "Votre date de naissance : ",
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'MM/dd/yyyy'
+            ))*/
+            ->add('email', null, array(
+                'label' => 'Votre email : '
+                ))
             ->add('password', 'repeated', array(
                 'type' => 'password',
                 'invalid_message' => 'Les mots de passe doivent correspondre',
                 'options' => array('required' => true),
-                'first_options'  => array('label' => 'Mot de passe'),
-                'second_options' => array('label' => 'Mot de passe (validation)'),
-            ))
-            ->add('salt')
-            ->add('token')
-            ->add('gender')
-            ->add('job')
-            ->add('descriptAsTrainer')
-            ->add('descriptAsStudent')
+                'first_options'  => array('label' => 'Mot de passe : '),
+                'second_options' => array('label' => 'Mot de passe (confirmation) : ')
+                ))
+            ->add('job', null, array(
+                'label' => 'Quel est votre métier ? '
+                ))
+            ->add('descriptAsTrainer', null, array(
+                'label' => 'Descriptif en tant que formateur : '
+                ))
+            ->add('descriptAsStudent', null, array(
+                'label' => 'Descriptif en tant qu’étudiant : '
+                ))
             ->add('Valider !', 'submit')
         ;
     }

@@ -20,6 +20,12 @@ class UserController extends Controller
         $register_form = $this->createForm(new RegisterType(), $user);
         $register_form->handleRequest($request);
 
+        if($register_form->isValid()){
+            echo "<pre>";
+            var_dump($request);
+            echo "</pre>";
+            die();
+        }
 
         $params = array(
             "register_form" => $register_form->createView()

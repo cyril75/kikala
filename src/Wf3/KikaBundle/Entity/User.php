@@ -45,14 +45,14 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="img", type="string", length=255)
+     * @ORM\Column(name="img", type="string", length=255, nullable=true)
      */
     private $img;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="yearOfBirth", type="datetime")
+     * @ORM\Column(name="yearOfBirth", type="date")
      */
     private $yearOfBirth;
 
@@ -274,7 +274,7 @@ class User
     /**
      * Set yearOfBirth
      *
-     * @param \DateTime $yearOfBirth
+     * @param \Date $yearOfBirth
      * @return User
      */
     public function setYearOfBirth($yearOfBirth)
@@ -287,7 +287,7 @@ class User
     /**
      * Get yearOfBirth
      *
-     * @return \DateTime 
+     * @return \Date 
      */
     public function getYearOfBirth()
     {

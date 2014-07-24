@@ -1,5 +1,7 @@
 {% extends "::base.html.twig" %}
 
+
+
 {% block title %}
 {{ parent() }} - Inscription
 {% endblock %}
@@ -8,6 +10,8 @@
 <h1>Formulaire d'incription</h1>
 
 {# Retire la validation html 5 #}
+{# {'attr': {'novalidate': 'novalidate'}} #}
 {{ form(register_form, {'attr': {'novalidate': 'novalidate'}}) }}
 
 {% endblock %}
+
