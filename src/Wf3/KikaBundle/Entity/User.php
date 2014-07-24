@@ -3,6 +3,7 @@
 namespace Wf3\KikaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -23,6 +24,9 @@ class User
 
     /**
      * @var string
+     *
+     * @Assert\NotBlank(message="Veuillez indiquer votre nom !")
+     *
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
